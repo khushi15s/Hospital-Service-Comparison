@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR (same as index page) -->
+<nav class="navbar">
+    <div class="logo">🏥 HealthFinder</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- RESULTS SECTION -->
+<section class="results-section">
+    <h2>Hospital Results</h2>
+
+    {% if hospitals %}
+        <div class="card-container">
+            {% for hospital in hospitals %}
+            <div class="card">
+                <h3>{{ hospital['name'] }}</h3>
+                <p><strong>City:</strong> {{ hospital['city'] }}</p>
+                <p><strong>Service:</strong> {{ hospital['service'] }}</p>
+                <p><strong>Cost:</strong> ₹{{ hospital['cost'] }}</p>
+                <p><strong>Rating:</strong> ⭐ {{ hospital['rating'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-result">No hospitals found 😢</p>
+    {% endif %}
+
+    <a href="/" class="back-btn">⬅ Back to Home</a>
+</section>
+
+</body>
+</html>

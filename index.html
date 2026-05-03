@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">🏥 HealthFinder</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>Find the Best Hospitals Near You</h1>
+    <p>Compare cost, rating & services easily</p>
+
+    <form action="/search" method="post" class="search-box">
+        <input type="text" name="city" placeholder="Enter City" required>
+        <input type="text" name="service" placeholder="Enter Service" required>
+        <button type="submit">Search</button>
+    </form>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="section">
+    <h2>About Us</h2>
+    <p>
+        HealthFinder helps you compare hospitals based on cost, ratings, and services.
+        Our goal is to make healthcare decisions easier and faster.
+    </p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: support@healthfinder.com</p>
+    <p>Phone: +91 9876543210</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 HealthFinder | Made by You 😎</p>
+</footer>
+
+</body>
+</html>
